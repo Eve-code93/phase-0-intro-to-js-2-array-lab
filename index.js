@@ -1,56 +1,52 @@
 // Write your solution here!
-// Define the initial cats array
+// Initial array
 const cats = ["Milo", "Otis", "Garfield"];
 
-// 1️⃣ Append a cat destructively
+// Destructive functions
 function destructivelyAppendCat(name) {
   cats.push(name);
 }
 
-// 2️⃣ Prepend a cat destructively
 function destructivelyPrependCat(name) {
   cats.unshift(name);
 }
 
-// 3️⃣ Remove the last cat destructively
 function destructivelyRemoveLastCat() {
   cats.pop();
 }
 
-// 4️⃣ Remove the first cat destructively
 function destructivelyRemoveFirstCat() {
   cats.shift();
 }
 
-// 5️⃣ Append a cat non-destructively
+// Non-destructive functions
 function appendCat(name) {
-  return [...cats, name]; // Creates a new array without modifying `cats`
+  return [...cats, name];
 }
 
-// 6️⃣ Prepend a cat non-destructively
 function prependCat(name) {
-  return [name, ...cats]; // Creates a new array without modifying `cats`
+  return [name, ...cats];
 }
 
-// 7️⃣ Remove the last cat non-destructively
 function removeLastCat() {
-  return cats.slice(0, -1); // Returns a new array without the last element
+  return cats.slice(0, -1);
 }
 
-// 8️⃣ Remove the first cat non-destructively
 function removeFirstCat() {
-  return cats.slice(1); // Returns a new array without the first element
+  return cats.slice(1);
 }
 
-// Export the functions if necessary (for testing in Node.js)
-module.exports = {
-  cats,
-  destructivelyAppendCat,
-  destructivelyPrependCat,
-  destructivelyRemoveLastCat,
-  destructivelyRemoveFirstCat,
-  appendCat,
-  prependCat,
-  removeLastCat,
-  removeFirstCat,
-};
+// Exporting functions for testing (if using Node.js)
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    cats,
+    destructivelyAppendCat,
+    destructivelyPrependCat,
+    destructivelyRemoveLastCat,
+    destructivelyRemoveFirstCat,
+    appendCat,
+    prependCat,
+    removeLastCat,
+    removeFirstCat
+  };
+}
